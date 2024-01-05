@@ -34,7 +34,7 @@ public class UserDTO {
 		userDTO.setEndereco(user.getEndereco());
 		userDTO.setEmail(user.getEmail());
 		userDTO.setTelefone(user.getTelefone());
-		userDTO.setDataCadastro(user.getDataCadastro());		
+		userDTO.setDataCadastro(user.getDataCadastro());	
 		return userDTO;
 	}
 

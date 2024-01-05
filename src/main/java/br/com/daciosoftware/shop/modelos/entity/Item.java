@@ -1,7 +1,14 @@
 package br.com.daciosoftware.shop.modelos.entity;
 
 import br.com.daciosoftware.shop.modelos.dto.ItemDTO;
+import br.com.daciosoftware.shop.modelos.dto.ProductDTO;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,16 +19,39 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity(name="itens")
+@Table(name = "itens", schema = "shopping")
 @Embeddable
-@Table(schema = "shopping")
 public class Item {
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private Integer quantidade;
 	private Float preco;
 	
+	@ManyToOne
+	@JoinColumn(name="product_id")
+	private Product product;
+	
+	@ManyToOne
+	@JoinColumn(name="shop_id")
+	private Shop shop;
+
 	public static Item convert(ItemDTO itemDTO) {
 		Item item = new Item();
-		
+		ProductDTO productDTO = itemDTO.getProduct();
+		Product product = Product.convert(productDTO);
+		item.setId(itemDTO.getId());
+		item.setProduct(product);
+		item.setQuantidade(itemDTO.getQuantidade());
+		item.setPreco(itemDTO.getPreco());
 		return item;
 	}
+
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", quantidade=" + quantidade + ", preco=" + preco + ", product=" + product + "]";
+	}
+	
 }
