@@ -1,6 +1,5 @@
 package br.com.daciosoftware.shop.modelos.entity;
 
-import br.com.daciosoftware.shop.modelos.dto.CategoryDTO;
 import br.com.daciosoftware.shop.modelos.dto.ProductDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -41,9 +40,7 @@ public class Product {
 		product.setDescricao(productDTO.getDescricao());
 		product.setPreco(productDTO.getPreco());
 		product.setProductIdentifier(productDTO.getProductIdentifier());
-		CategoryDTO categoryDTO = productDTO.getCategory(); 
-		Category category = Category.convert(categoryDTO);
-		product.setCategory(category);
+		product.setCategory(Category.convert(productDTO.getCategory()));
 		return product;
 	}
 

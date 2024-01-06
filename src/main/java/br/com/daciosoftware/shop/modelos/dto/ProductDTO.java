@@ -1,7 +1,6 @@
 package br.com.daciosoftware.shop.modelos.dto;
 
 
-import br.com.daciosoftware.shop.modelos.entity.Category;
 import br.com.daciosoftware.shop.modelos.entity.Product;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -35,9 +34,7 @@ public class ProductDTO {
 		productDTO.setDescricao(product.getDescricao());
 		productDTO.setPreco(product.getPreco());
 		productDTO.setProductIdentifier(product.getProductIdentifier());
-		Category category = product.getCategory();
-		CategoryDTO categoryDTO = CategoryDTO.convert(category);
-		productDTO.setCategory(categoryDTO);
+		productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
 		return productDTO;
 	}
 

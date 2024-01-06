@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import br.com.daciosoftware.shop.modelos.dto.ShopDTO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -38,10 +39,14 @@ public class Shop {
 	@JoinColumn(name = "user_id")
 	private User user;
 
+	
+	//@ElementCollection(fetch = FetchType.EAGER)
+	//@CollectionTable(name="itens", joinColumns = @JoinColumn(name="shop_id"))
 	@OneToMany(
 			mappedBy = "shop",
 		    orphanRemoval = true,
-		    cascade = CascadeType.ALL)
+		    cascade = CascadeType.ALL,
+		    fetch = FetchType.EAGER)
 	private List<Item> itens = new ArrayList<>();
 
 	public static Shop convert(ShopDTO shopDTO) {
@@ -51,7 +56,7 @@ public class Shop {
 		shop.setTotal(shopDTO.getTotal());
 		shop.setUser(User.convert(shopDTO.getUser()));		
 		List<Item> itens = shopDTO.getItens().stream().map(Item::convert).collect(Collectors.toList());
-		itens.forEach((i) -> i.setShop(shop));		
+		itens.forEach((i) -> i.setShop(shop));//Anexar o item ao shop
 		shop.setItens(itens);
 		return shop;
 	}

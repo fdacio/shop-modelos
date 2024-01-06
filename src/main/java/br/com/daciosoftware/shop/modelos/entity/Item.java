@@ -1,7 +1,6 @@
 package br.com.daciosoftware.shop.modelos.entity;
 
 import br.com.daciosoftware.shop.modelos.dto.ItemDTO;
-import br.com.daciosoftware.shop.modelos.dto.ProductDTO;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,10 +39,8 @@ public class Item {
 
 	public static Item convert(ItemDTO itemDTO) {
 		Item item = new Item();
-		ProductDTO productDTO = itemDTO.getProduct();
-		Product product = Product.convert(productDTO);
 		item.setId(itemDTO.getId());
-		item.setProduct(product);
+		item.setProduct(Product.convert(itemDTO.getProduct()));
 		item.setQuantidade(itemDTO.getQuantidade());
 		item.setPreco(itemDTO.getPreco());
 		return item;

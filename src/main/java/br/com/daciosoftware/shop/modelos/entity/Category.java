@@ -26,8 +26,15 @@ public class Category {
 	
 	public static Category convert(CategoryDTO categoryDTO) {
 		Category category = new Category();
-		category.setId(category.getId());
-		category.setNome(category.getNome());
+		category.setId(categoryDTO.getId());
+		category.setNome(categoryDTO.getNome());
 		return category;
 	}
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", nome=" + nome + "]";
+	}
+	
+	
 }

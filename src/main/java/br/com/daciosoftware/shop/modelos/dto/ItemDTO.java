@@ -1,7 +1,6 @@
 package br.com.daciosoftware.shop.modelos.dto;
 
 import br.com.daciosoftware.shop.modelos.entity.Item;
-import br.com.daciosoftware.shop.modelos.entity.Product;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,10 +23,8 @@ public class ItemDTO {
 	
 	public static ItemDTO convert(Item item) {
 		ItemDTO itemDTO = new ItemDTO();
-		Product product = item.getProduct();
-		ProductDTO productDTO = ProductDTO.convert(product);
 		itemDTO.setId(item.getId());
-		itemDTO.setProduct(productDTO);
+		itemDTO.setProduct(ProductDTO.convert(item.getProduct()));
 		itemDTO.setQuantidade(item.getQuantidade());
 		itemDTO.setPreco(item.getPreco());
 		return itemDTO;
