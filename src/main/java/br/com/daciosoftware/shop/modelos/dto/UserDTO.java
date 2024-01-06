@@ -24,6 +24,7 @@ public class UserDTO {
 	@NotBlank(message="Informe o email")
 	private String email;
 	private String telefone;
+	private String key;
 	private LocalDateTime dataCadastro;  
 	
 	public static UserDTO convert(User user) {		
@@ -34,6 +35,7 @@ public class UserDTO {
 		userDTO.setEndereco(user.getEndereco());
 		userDTO.setEmail(user.getEmail());
 		userDTO.setTelefone(user.getTelefone());
+		userDTO.setKey(user.getKey());
 		userDTO.setDataCadastro(user.getDataCadastro());	
 		return userDTO;
 	}

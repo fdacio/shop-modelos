@@ -31,6 +31,7 @@ public class User {
 	private String endereco;
 	private String email;
 	private String telefone;
+	private String key;
 	private LocalDateTime dataCadastro;
 	
 	public static User convert(UserDTO userDTO) {		
@@ -41,6 +42,7 @@ public class User {
 		user.setEndereco(userDTO.getEndereco());
 		user.setEmail(userDTO.getEmail());
 		user.setTelefone(userDTO.getTelefone());
+		user.setKey(userDTO.getKey());
 		user.setDataCadastro(userDTO.getDataCadastro());		
 		return user;
 	}
