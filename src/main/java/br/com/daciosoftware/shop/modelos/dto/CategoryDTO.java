@@ -1,7 +1,7 @@
 package br.com.daciosoftware.shop.modelos.dto;
 
 import br.com.daciosoftware.shop.modelos.entity.Category;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,9 +13,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategoryDTO {
 
-	@NotNull
 	private Long id;
-	@NotNull
+	@NotBlank(message="Informe o nome")
 	private String nome;
 	
 	public static CategoryDTO convert(Category category) {
