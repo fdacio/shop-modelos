@@ -2,6 +2,7 @@ package br.com.daciosoftware.shop.modelos.dto;
 
 import br.com.daciosoftware.shop.modelos.entity.Category;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,9 +13,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryDTO {
-
+	
 	private Long id;
 	@NotBlank(message="Informe o nome")
+	@Size(message="Nome tem que ter no máximo 30 caracteres", max = 30)
 	private String nome;
 	
 	public static CategoryDTO convert(Category category) {

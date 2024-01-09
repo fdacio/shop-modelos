@@ -20,7 +20,7 @@ public class ProductDTO {
 	private String nome;
 	@NotBlank(message = "Informe o descrição")
 	private String descricao;
-	@NotBlank(message = "Informe o indenticador de produto")
+	@NotBlank(message = "Informe o indenticador")
 	private String productIdentifier;
 	@NotNull(message = "Informe o preço")
 	private Float preco;
