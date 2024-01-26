@@ -1,6 +1,8 @@
 package br.com.daciosoftware.shop.modelos.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import br.com.daciosoftware.shop.modelo.validation.cpf.CPF;
 import br.com.daciosoftware.shop.modelos.entity.User;
@@ -41,7 +43,9 @@ public class UserDTO {
 	private String telefone;
 	
 	private String key;
-	private LocalDateTime dataCadastro;  
+	private LocalDateTime dataCadastro;
+	
+	private List<CategoryDTO> interesses;
 	
 	public static UserDTO convert(User user) {		
 		UserDTO userDTO = new UserDTO();
@@ -52,7 +56,9 @@ public class UserDTO {
 		userDTO.setEmail(user.getEmail());
 		userDTO.setTelefone(user.getTelefone());
 		userDTO.setKey(user.getKey());
-		userDTO.setDataCadastro(user.getDataCadastro());	
+		userDTO.setDataCadastro(user.getDataCadastro());
+		if (user.getInteresses() != null)
+			userDTO.setInteresses(user.getInteresses().stream().map(CategoryDTO::convert).collect(Collectors.toList()));
 		return userDTO;
 	}
 
