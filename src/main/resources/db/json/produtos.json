@@ -152,5 +152,16 @@
             "id": 1,
             "nome": "Eletrônicos"
         }
+    },
+        {
+        "id": 41,
+        "nome": "Produto 007",
+        "descricao": "Produto 007",
+        "productIdentifier": "0000000007",
+        "preco": 200.0,
+        "category": {
+            "id": 1,
+            "nome": "Eletrônicos"
+        }
     }
 ]
