@@ -16,7 +16,7 @@ public class CategoryDTO {
 	
 	private Long id;
 	@NotBlank(message="Informe o nome")
-	@Size(message="Nome tem que ter no máximo 30 caracteres", max = 30)
+	@Size(message="Campo nome muito longo. O máximo são de 30 caracteres", max = 30)
 	private String nome;
 	
 	public static CategoryDTO convert(Category category) {

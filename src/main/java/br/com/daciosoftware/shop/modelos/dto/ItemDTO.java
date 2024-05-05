@@ -1,6 +1,7 @@
 package br.com.daciosoftware.shop.modelos.dto;
 
 import br.com.daciosoftware.shop.modelos.entity.Item;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,10 +15,12 @@ import lombok.Setter;
 public class ItemDTO {
 	
 	private Long id;
-	@NotNull(message="Informe a quantidade")
-	private Integer quantidade;
-	@NotNull(message="Informe a preco do produto")
 	private Float preco;
+
+	@NotNull(message="Informe a quantidade")
+	@Min(message="Quantidade mínima é 1", value=1)
+	private Integer quantidade;
+	
 	@NotNull(message="Informe o produto")
 	private ProductDTO product;
 	

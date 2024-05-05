@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import br.com.daciosoftware.shop.modelos.entity.Shop;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +26,8 @@ public class ShopDTO {
 	@NotNull(message="Informe o usuário")
 	private UserDTO user;
 	@NotNull(message="Informe os itens")
-	private List<ItemDTO> itens = new ArrayList<>();
+	@NotEmpty(message="Informe pelo menos um item")
+	private List<@Valid ItemDTO> itens = new ArrayList<>();
 	
 	public static ShopDTO convert(Shop shop) {
 		ShopDTO shopDTO = new ShopDTO();
@@ -32,7 +35,10 @@ public class ShopDTO {
 		shopDTO.setData(shop.getData());
 		shopDTO.setTotal(shop.getTotal());
 		shopDTO.setUser(UserDTO.convert(shop.getUser()));
-		List<ItemDTO> itensDTO = shop.getItens().stream().map(ItemDTO::convert).collect(Collectors.toList());
+		List<ItemDTO> itensDTO = shop.getItens()
+				.stream()
+				.map(ItemDTO::convert)
+				.collect(Collectors.toList());
 		shopDTO.setItens(itensDTO);
 		return shopDTO;
 	}
