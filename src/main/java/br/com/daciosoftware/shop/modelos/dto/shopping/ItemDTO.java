@@ -1,6 +1,7 @@
-package br.com.daciosoftware.shop.modelos.dto;
+package br.com.daciosoftware.shop.modelos.dto.shopping;
 
-import br.com.daciosoftware.shop.modelos.entity.Item;
+import br.com.daciosoftware.shop.modelos.dto.product.ProductDTO;
+import br.com.daciosoftware.shop.modelos.entity.shopping.Item;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

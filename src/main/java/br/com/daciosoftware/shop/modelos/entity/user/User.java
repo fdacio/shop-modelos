@@ -1,10 +1,11 @@
-package br.com.daciosoftware.shop.modelos.entity;
+package br.com.daciosoftware.shop.modelos.entity.user;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.daciosoftware.shop.modelos.dto.UserDTO;
+import br.com.daciosoftware.shop.modelos.dto.user.UserDTO;
+import br.com.daciosoftware.shop.modelos.entity.product.Category;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

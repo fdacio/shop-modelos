@@ -1,10 +1,11 @@
-package br.com.daciosoftware.shop.modelos.dto;
+package br.com.daciosoftware.shop.modelos.dto.user;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.daciosoftware.shop.modelos.entity.User;
+import br.com.daciosoftware.shop.modelos.dto.product.CategoryDTO;
+import br.com.daciosoftware.shop.modelos.entity.user.User;
 import br.com.daciosoftware.shop.modelos.validator.CPF;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

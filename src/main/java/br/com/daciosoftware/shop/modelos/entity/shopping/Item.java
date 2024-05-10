@@ -1,6 +1,7 @@
-package br.com.daciosoftware.shop.modelos.entity;
+package br.com.daciosoftware.shop.modelos.entity.shopping;
 
-import br.com.daciosoftware.shop.modelos.dto.ItemDTO;
+import br.com.daciosoftware.shop.modelos.dto.shopping.ItemDTO;
+import br.com.daciosoftware.shop.modelos.entity.product.Product;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

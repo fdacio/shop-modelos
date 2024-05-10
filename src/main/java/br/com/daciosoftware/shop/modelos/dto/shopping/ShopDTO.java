@@ -1,12 +1,12 @@
-package br.com.daciosoftware.shop.modelos.dto;
+package br.com.daciosoftware.shop.modelos.dto.shopping;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.daciosoftware.shop.modelos.entity.Shop;
-import jakarta.validation.Valid;
+import br.com.daciosoftware.shop.modelos.dto.user.UserDTO;
+import br.com.daciosoftware.shop.modelos.entity.shopping.Shop;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -27,7 +27,7 @@ public class ShopDTO {
 	private UserDTO user;
 	@NotNull(message="Informe os itens")
 	@NotEmpty(message="Informe pelo menos um item")
-	private List<@Valid ItemDTO> itens = new ArrayList<>();
+	private List<ItemDTO> itens = new ArrayList<>();
 	
 	public static ShopDTO convert(Shop shop) {
 		ShopDTO shopDTO = new ShopDTO();

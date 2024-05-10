@@ -1,11 +1,12 @@
-package br.com.daciosoftware.shop.modelos.entity;
+package br.com.daciosoftware.shop.modelos.entity.shopping;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.daciosoftware.shop.modelos.dto.ShopDTO;
+import br.com.daciosoftware.shop.modelos.dto.shopping.ShopDTO;
+import br.com.daciosoftware.shop.modelos.entity.user.User;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

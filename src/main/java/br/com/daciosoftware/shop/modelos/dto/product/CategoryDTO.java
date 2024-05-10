@@ -1,6 +1,6 @@
-package br.com.daciosoftware.shop.modelos.dto;
+package br.com.daciosoftware.shop.modelos.dto.product;
 
-import br.com.daciosoftware.shop.modelos.entity.Category;
+import br.com.daciosoftware.shop.modelos.entity.product.Category;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

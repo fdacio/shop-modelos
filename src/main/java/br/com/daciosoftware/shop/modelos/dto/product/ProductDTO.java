@@ -1,7 +1,7 @@
-package br.com.daciosoftware.shop.modelos.dto;
+package br.com.daciosoftware.shop.modelos.dto.product;
 
 
-import br.com.daciosoftware.shop.modelos.entity.Product;
+import br.com.daciosoftware.shop.modelos.entity.product.Product;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

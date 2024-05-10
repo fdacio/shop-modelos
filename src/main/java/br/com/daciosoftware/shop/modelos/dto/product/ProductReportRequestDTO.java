@@ -1,4 +1,4 @@
-package br.com.daciosoftware.shop.modelos.dto;
+package br.com.daciosoftware.shop.modelos.dto.product;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
