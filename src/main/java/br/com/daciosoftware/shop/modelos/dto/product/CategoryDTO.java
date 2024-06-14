@@ -1,5 +1,7 @@
 package br.com.daciosoftware.shop.modelos.dto.product;
 
+import java.util.Objects;
+
 import br.com.daciosoftware.shop.modelos.entity.product.Category;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -7,11 +9,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class CategoryDTO {
 	
 	private Long id;
@@ -27,7 +31,20 @@ public class CategoryDTO {
 	}
 
 	@Override
-	public String toString() {
-		return "CategoryDTO [id=" + id + ", nome=" + nome + "]";
+	public int hashCode() {
+		return Objects.hash(id);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CategoryDTO other = (CategoryDTO) obj;
+		return Objects.equals(id, other.id);
+	}
+
 }

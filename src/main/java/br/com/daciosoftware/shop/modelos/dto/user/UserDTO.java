@@ -46,6 +46,7 @@ public class UserDTO {
 	private String telefone;
 	
 	private String key;
+	
 	private LocalDateTime dataCadastro;
 	
 	private List<CategoryDTO> interesses;
@@ -65,4 +66,14 @@ public class UserDTO {
 		return userDTO;
 	}
 	
+	public static UserSimpleDTO convert(UserDTO user) {
+		UserSimpleDTO userSimpleDTO = new UserSimpleDTO();
+		userSimpleDTO.setId(user.getId());
+		userSimpleDTO.setNome(user.getNome());
+		userSimpleDTO.setCpf(user.getCpf());
+		userSimpleDTO.setEndereco(user.getEndereco());
+		userSimpleDTO.setEmail(user.getEmail());
+		userSimpleDTO.setTelefone(user.getTelefone());
+		return userSimpleDTO;
+	}
 }
