@@ -25,7 +25,7 @@ public class ProductDTO {
 	private String descricao;
 	@NotBlank(message = "Informe o indenticador")
 	@Size(message="Campo identificador muito longo. O máximo são 20 caracteres", max=20)
-	private String productIdentifier;
+	private String identifier;
 	@NotNull(message = "Informe o preço")
 	private Float preco;
 	@NotNull(message = "Informe a categoria")
@@ -38,7 +38,7 @@ public class ProductDTO {
 		productDTO.setNome(product.getNome());
 		productDTO.setDescricao(product.getDescricao());
 		productDTO.setPreco(product.getPreco());
-		productDTO.setProductIdentifier(product.getProductIdentifier());
+		productDTO.setIdentifier(product.getIdentifier());
 		productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
 		productDTO.setFoto(product.getFoto());
 		return productDTO;
@@ -47,7 +47,7 @@ public class ProductDTO {
 	@Override
 	public String toString() {
 		return "ProductDTO [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", preco=" + preco
-				+ ", productIdentifier=" + productIdentifier + ", category=" + category + "]";
+				+ ", productIdentifier=" + identifier + ", category=" + category + "]";
 	}
 
 }

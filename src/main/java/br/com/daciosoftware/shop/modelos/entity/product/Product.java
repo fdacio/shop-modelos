@@ -27,7 +27,7 @@ public class Product {
 	private String nome;
 	private String descricao;
 	private Float preco;
-	private String productIdentifier;
+	private String identifier;
 	private String foto;
 	
 	@ManyToOne
@@ -40,7 +40,7 @@ public class Product {
 		product.setNome(productDTO.getNome());
 		product.setDescricao(productDTO.getDescricao());
 		product.setPreco(productDTO.getPreco());
-		product.setProductIdentifier(productDTO.getProductIdentifier());
+		product.setIdentifier(productDTO.getIdentifier());
 		product.setCategory(Category.convert(productDTO.getCategory()));
 		product.setFoto(productDTO.getFoto());
 		return product;
@@ -49,7 +49,7 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", preco=" + preco
-				+ ", productIdentifier=" + productIdentifier + ", category=" + category + "]";
+				+ ", productIdentifier=" + identifier + ", category=" + category + "]";
 	}
 	
 }
