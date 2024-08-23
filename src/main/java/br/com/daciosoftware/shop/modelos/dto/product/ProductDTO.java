@@ -39,7 +39,9 @@ public class ProductDTO {
 		productDTO.setDescricao(product.getDescricao());
 		productDTO.setPreco(product.getPreco());
 		productDTO.setIdentifier(product.getIdentifier());
-		productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
+		if (product.getCategory() != null) {
+			productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
+		}
 		productDTO.setFoto(product.getFoto());
 		return productDTO;
 	}
