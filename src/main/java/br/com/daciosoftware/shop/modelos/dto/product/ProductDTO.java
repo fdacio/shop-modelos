@@ -23,7 +23,7 @@ public class ProductDTO {
 	@NotBlank(message = "Informe o descrição")
 	@Size(message="Campo descrição muito longo. O máximo são 240 caracteres", max=240)
 	private String descricao;
-	@NotBlank(message = "Informe o indenticador")
+	@NotBlank(message = "Informe o identificador")
 	@Size(message="Campo identificador muito longo. O máximo são 20 caracteres", max=20)
 	private String identifier;
 	@NotNull(message = "Informe o preço")
@@ -47,7 +47,7 @@ public class ProductDTO {
 	@Override
 	public String toString() {
 		return "ProductDTO [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", preco=" + preco
-				+ ", productIdentifier=" + identifier + ", category=" + category + "]";
+				+ ", identifier=" + identifier + ", category=" + category + "]";
 	}
 
 }
