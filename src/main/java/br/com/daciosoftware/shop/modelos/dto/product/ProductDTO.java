@@ -18,10 +18,10 @@ public class ProductDTO {
 
 	private Long id;
 	@NotBlank(message = "Informe o nome")
-	@Size(message="Campo nome muito longo. O máximo é 60 caracteres", max=60)
+	@Size(message="Campo nome muito longo. O máximo é 120 caracteres", max=120)
 	private String nome;
 	@NotBlank(message = "Informe o descrição")
-	@Size(message="Campo descrição muito longo. O máximo são 120 caracteres", max=120)
+	@Size(message="Campo descrição muito longo. O máximo são 240 caracteres", max=240)
 	private String descricao;
 	@NotBlank(message = "Informe o indenticador")
 	@Size(message="Campo identificador muito longo. O máximo são 20 caracteres", max=20)
@@ -30,6 +30,7 @@ public class ProductDTO {
 	private Float preco;
 	@NotNull(message = "Informe a categoria")
 	private CategoryDTO category;
+	private String foto;
 
 	public static ProductDTO convert(Product product) {
 		ProductDTO productDTO = new ProductDTO();
@@ -39,6 +40,7 @@ public class ProductDTO {
 		productDTO.setPreco(product.getPreco());
 		productDTO.setProductIdentifier(product.getProductIdentifier());
 		productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
+		productDTO.setFoto(product.getFoto());
 		return productDTO;
 	}
 

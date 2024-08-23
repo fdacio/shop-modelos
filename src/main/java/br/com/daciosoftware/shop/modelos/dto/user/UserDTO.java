@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import br.com.daciosoftware.shop.modelos.dto.product.CategoryDTO;
 import br.com.daciosoftware.shop.modelos.entity.user.User;
 import br.com.daciosoftware.shop.modelos.validator.CPF;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -44,7 +45,8 @@ public class UserDTO {
 	@NotBlank(message="Informe o telefone")
 	@Size(message="Telefone tem que ter no máximo 20 caracteres", max = 20)
 	private String telefone;
-	
+
+	@JsonIgnore
 	private String key;
 	
 	private LocalDateTime dataCadastro;

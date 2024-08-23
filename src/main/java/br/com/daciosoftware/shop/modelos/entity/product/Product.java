@@ -28,6 +28,7 @@ public class Product {
 	private String descricao;
 	private Float preco;
 	private String productIdentifier;
+	private String foto;
 	
 	@ManyToOne
 	@JoinColumn(name="category_id")
@@ -41,6 +42,7 @@ public class Product {
 		product.setPreco(productDTO.getPreco());
 		product.setProductIdentifier(productDTO.getProductIdentifier());
 		product.setCategory(Category.convert(productDTO.getCategory()));
+		product.setFoto(productDTO.getFoto());
 		return product;
 	}
 
