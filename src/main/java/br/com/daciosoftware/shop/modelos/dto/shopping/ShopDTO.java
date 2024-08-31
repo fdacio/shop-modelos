@@ -1,10 +1,5 @@
 package br.com.daciosoftware.shop.modelos.dto.shopping;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import br.com.daciosoftware.shop.modelos.dto.user.UserDTO;
 import br.com.daciosoftware.shop.modelos.entity.shopping.Shop;
 import jakarta.validation.constraints.NotEmpty;
@@ -13,6 +8,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter

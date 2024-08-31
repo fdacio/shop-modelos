@@ -39,15 +39,14 @@ public class User {
 	private String endereco;
 	private String email;
 	private String telefone;
-	private String key;
 	private LocalDateTime dataCadastro;
-	
 	@OneToMany
-	@JoinTable(schema="users", name="interesses", 
+	@JoinTable(schema="users", name="interesses",
 				joinColumns = @JoinColumn(name="user_id"),
 				inverseJoinColumns = @JoinColumn(name="category_id"))
 	private List<Category> interesses;
-	
+	private String key;
+
 	public static User convert(UserDTO userDTO) {		
 		User user = new User();
 		user.setId(userDTO.getId());

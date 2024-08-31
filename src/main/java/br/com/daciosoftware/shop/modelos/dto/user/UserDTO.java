@@ -46,14 +46,12 @@ public class UserDTO {
 	@Size(message="Telefone tem que ter no máximo 20 caracteres", max = 20)
 	private String telefone;
 
+	private LocalDateTime dataCadastro;
+	private List<CategoryDTO> interesses;
 	@JsonIgnore
 	private String key;
-	
-	private LocalDateTime dataCadastro;
-	
-	private List<CategoryDTO> interesses;
-	
-	public static UserDTO convert(User user) {		
+
+	public static UserDTO convert(User user) {
 		UserDTO userDTO = new UserDTO();
 		userDTO.setId(user.getId());
 		userDTO.setNome(user.getNome());
@@ -67,15 +65,5 @@ public class UserDTO {
 			userDTO.setInteresses(user.getInteresses().stream().map(CategoryDTO::convert).collect(Collectors.toList()));
 		return userDTO;
 	}
-	
-	public static UserSimpleDTO convert(UserDTO user) {
-		UserSimpleDTO userSimpleDTO = new UserSimpleDTO();
-		userSimpleDTO.setId(user.getId());
-		userSimpleDTO.setNome(user.getNome());
-		userSimpleDTO.setCpf(user.getCpf());
-		userSimpleDTO.setEndereco(user.getEndereco());
-		userSimpleDTO.setEmail(user.getEmail());
-		userSimpleDTO.setTelefone(user.getTelefone());
-		return userSimpleDTO;
-	}
+
 }

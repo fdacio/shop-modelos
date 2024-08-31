@@ -39,7 +39,6 @@ public class Shop {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-
 	
 	//@ElementCollection(fetch = FetchType.EAGER)
 	//@CollectionTable(name="itens", joinColumns = @JoinColumn(name="shop_id"))
@@ -66,6 +65,5 @@ public class Shop {
 	public String toString() {
 		return "Shop [id=" + id + ", data=" + data + ", total=" + total + ", user=" + user + ", itens=" + itens + "]";
 	}
-	
 	
 }
